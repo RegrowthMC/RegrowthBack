@@ -1,5 +1,5 @@
-name: ProjectName
+name: RegrowthBack
 version: ${version}+${commit}
-main: org.lushplugins.projectname.ProjectName
+main: org.lushplugins.regrowthback.RegrowthBack
 api-version: '1.21'
-github-repo: ProjectOwner/ProjectName
+github-repo: ProjectOwner/RegrowthBack
