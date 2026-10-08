@@ -2,4 +2,4 @@ name: RegrowthBack
 version: ${version}+${commit}
 main: org.lushplugins.regrowthback.RegrowthBack
 api-version: '1.21'
-github-repo: ProjectOwner/RegrowthBack
+github-repo: RegrowthMC/RegrowthBack
