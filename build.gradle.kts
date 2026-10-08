@@ -4,26 +4,30 @@ import java.io.InputStreamReader
 plugins {
     `java-library`
     id("com.gradleup.shadow") version("9.3.1")
-    id("xyz.jpenilla.run-paper") version("3.0.2")
+    id("xyz.jpenilla.run-paper") version("3.1.0")
 }
 
 group = "org.lushplugins"
-version = "1.0.0-alpha.1"
+version = "1.0.0"
 
 repositories {
     mavenLocal()
     mavenCentral()
     maven("https://oss.sonatype.org/content/groups/public/")
     maven("https://repo.papermc.io/repository/maven-public/") // Paper
+    maven("https://repo.lushplugins.org/snapshots/") // LushPlugins
 }
 
 dependencies {
     // Dependencies
     compileOnly("io.papermc.paper:paper-api:26.2.build.+")
 
-    // Soft Dependencies
-
     // Libraries
+    implementation("org.lushplugins:LushLib:1.0.2")
+    implementation("org.lushplugins.lushlib:jackson:1.0.2")
+    implementation("org.lushplugins:StorageHandler:0.0.6")
+    implementation("io.github.revxrsal:lamp.common:4.0.0-rc.18")
+    implementation("io.github.revxrsal:lamp.bukkit:4.0.0-rc.18")
 }
 
 java {
@@ -43,6 +47,9 @@ tasks {
     }
 
     shadowJar {
+        // TODO: Fix relocation within LushLib and remove relocation here
+        relocate("com.fasterxml.jackson", "org.lushplugins.lushlib.libraries.jackson")
+
         minimize()
 
         archiveFileName.set("${project.name}-${project.version}.jar")
@@ -61,11 +68,11 @@ tasks {
     }
 
     runServer {
-        minecraftVersion("1.21.11")
+        minecraftVersion("26.2")
 
         downloadPlugins {
-            modrinth("viaversion", "5.7.1")
-            modrinth("viabackwards", "5.7.1")
+            modrinth("viaversion", "5.12.1")
+            modrinth("viabackwards", "5.12.1")
         }
     }
 }

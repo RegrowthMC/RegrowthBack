@@ -1,0 +1,2 @@
+# The amount of time in seconds after a location is stored that it should be invalidated
+expiry-time: 1800
