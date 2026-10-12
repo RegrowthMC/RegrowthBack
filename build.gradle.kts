@@ -26,8 +26,8 @@ dependencies {
     implementation("org.lushplugins:LushLib:1.0.2")
     implementation("org.lushplugins.lushlib:jackson:1.0.2")
     implementation("org.lushplugins:StorageHandler:0.0.6")
-    implementation("io.github.revxrsal:lamp.common:4.0.0-rc.18")
-    implementation("io.github.revxrsal:lamp.bukkit:4.0.0-rc.18")
+    implementation("io.github.revxrsal:lamp.common:4.0.0-rc.19")
+    implementation("io.github.revxrsal:lamp.bukkit:4.0.0-rc.19")
 }
 
 java {
